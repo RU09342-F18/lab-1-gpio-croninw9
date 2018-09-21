@@ -1,18 +1,20 @@
 # Button Blink
-Now that you have looked at blinking the LED from some built in delay, but what if we wanted to control the state of the LED by a button? You may think "Why would I need a Microcontroller to perform the job of a switch?". And that is where you come in. The bare minimum for this part of the lab is to essentially replicate a switch with your development board.
+The Button Blink code allows an on-board LED to toggle on an off with a the push of a button turning the LED blinking off or on.
 
-# YOU NEED TO CREATE THE FOLLOWING FOLDERS
+## Boards Used
 * MSP430G2553
-* MSP(FILL IN THE PROCESSOR YOU ARE USING)
+* MSP430F5529
 
-## README
-Remember to replace this README with your README once you are ready to submit. I would recommend either making a copy of this file or taking a screen shot. There might be a copy of all of these README's in a folder on the top level depending on the exercise. Make sure you talk about how your button is configured (momentary or continuous. Normally open or closed. Does the button press indicate when the LED should be on or off.)
+## How the Code Works (G2553)
+The code works by setting Pin 1.0 as an output and Pin 1.3 as an input. The code also enables a pull up resistor on the button to ensure accurate button presses. The code then goes into a loop with an if-else statement where if the button is pressed the LED will begin to blink through the XOR function. When the button is pressed again, the blinking will cease.
 
-## Extra Work
-What can we do to make this a little bit more worthy of needing a microcontroller.
+### Pin Outs
+Pin 1.0 - LED output 
+Pin 1.3 - Button Input
 
-### Button Based Speed Control
-Much like the UART controlled speed, what if you could cycle between speeds based on a button press? The speed could progress through a cycle of "Off-Slow-Medium-Fast" looping back when you hit the end.
+## How the Code Works (F5529)
+The code works by setting Pin 1.0 as an output and Pin 2.1 as an input. The code also enables a pull up resistor on the button to ensure accurate button presses. The code then goes into a loop with an if-else statement where if the button is pressed the LED will begin to blink through the XOR function. When the button is pressed again, the blinking will cease.
 
-### Color Change
-What if upon a button press, the LED which was blinking changed. Some of the development boards contain two LEDs, so you could swap between a Red and a Green LED.
+### Pin Outs
+Pin 1.0 - LED Output
+Pin 2.1 - Button Input
